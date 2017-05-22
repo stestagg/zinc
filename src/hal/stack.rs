@@ -35,6 +35,7 @@ pub fn stack_limit() -> u32 {
 }
 
 /// Sets the current stack limit.
+#[inline]
 pub fn set_stack_limit(val: u32) {
   unsafe { __STACK_LIMIT = val }
 }

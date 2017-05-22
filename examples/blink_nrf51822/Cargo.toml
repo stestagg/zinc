@@ -1,0 +1,18 @@
+[package]
+name = "blink_nrf51822"
+version = "0.0.1"
+
+[features]
+default = ["mcu_nrf51822"]
+mcu_nrf51822 = ["zinc/mcu_nrf51822"]
+
+[dependencies]
+zinc = { path =  "../.." }
+macro_zinc = { path = "../../macro_zinc" }
+volatile_cell = { path = "../../volatile_cell" }
+ioreg = { path = "../../ioreg" }
+
+[dependencies.compiler_builtins]
+git = "https://github.com/rust-lang-nursery/compiler-builtins"
+rev = "631b5687b24af413fdbffa4c2644484e60660b00"
+features = []

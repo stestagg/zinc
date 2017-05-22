@@ -63,7 +63,7 @@ unsafe fn disable_irqs() { unimplemented!() }
 /// Enables all interrupts except Reset, HardFault, and NMI.
 #[cfg(target_os = "none")]
 #[inline(always)]
-unsafe fn enable_irqs() {
+pub unsafe fn enable_irqs() {
   if irq_level == 0 {
     abort();
   }
@@ -75,5 +75,5 @@ unsafe fn enable_irqs() {
   }
 }
 
-#[cfg(not(target_os = "none"))]
-unsafe fn enable_irqs() { unimplemented!() }
+// #[cfg(not(target_os = "none"))]
+// unsafe fn enable_irqs() { unimplemented!() }
